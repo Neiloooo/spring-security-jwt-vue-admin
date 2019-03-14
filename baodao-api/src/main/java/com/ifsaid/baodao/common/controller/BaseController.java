@@ -49,14 +49,14 @@ public class BaseController<T extends BaseEntity, ID, S extends IBaseService<T, 
     }
 
     @ApiOperation(value = "新增", notes = "不需要添加id")
-    @PostMapping("/")
+    @PostMapping()
     public Result<T> save(@RequestBody T entity) {
         log.info("save :  {}", entity);
         return Result.success(baseService.save(entity));
     }
 
     @ApiOperation(value = "修改", notes = "修改必须要id")
-    @PutMapping("/")
+    @PutMapping()
     public Result<T> update(@RequestBody T entity) {
         log.info("update:  {}", entity);
         return Result.success(baseService.update(entity));

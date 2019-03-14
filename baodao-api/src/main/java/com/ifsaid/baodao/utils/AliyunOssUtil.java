@@ -1,4 +1,4 @@
-package com.ifsaid.baodao.common.utils;
+package com.ifsaid.baodao.utils;
 
 
 import com.aliyun.oss.ClientException;

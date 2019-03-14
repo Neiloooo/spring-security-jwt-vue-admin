@@ -46,7 +46,7 @@ public class Swagger2Config {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("利正源微服务 Swagger2构建RESTful接口")
+                .title("哈哈后台 Swagger2 构建RESTful接口 ")
                 .description("接口描述")
                 .termsOfServiceUrl("termsOfServiceUrl")
                 .version("1.0")

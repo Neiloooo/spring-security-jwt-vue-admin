@@ -1,8 +1,10 @@
 package com.ifsaid.baodao.controller;
 
 
-import com.ifsaid.baodao.common.utils.AliyunOssUtil;
+import com.ifsaid.baodao.utils.AliyunOssUtil;
 import com.ifsaid.baodao.vo.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
@@ -26,6 +28,7 @@ import java.util.Map;
  */
 
 @Slf4j
+@Api(tags = "文件上传")
 @RestController
 @RequestMapping("/upload")
 public class UploadController {
@@ -37,6 +40,7 @@ public class UploadController {
      * @Param: [fileName]
      * @return: java.io.File
      */
+    @ApiOperation(value = "图片上传", notes = "普通的图片上传：500px * 500px")
     @PostMapping("/image")
     public Result uploadImages(MultipartFile file) throws IOException {
         if (file.isEmpty() || StringUtils.isEmpty(file.getOriginalFilename())) {
@@ -65,6 +69,7 @@ public class UploadController {
      * @Param: [fileName]
      * @return: java.io.File
      */
+    @ApiOperation(value = "图片删除", notes = "根据url 删除图片")
     @DeleteMapping("/delete")
     public Result deleteImages(@RequestBody Map<String, String> map) throws IOException {
         String url = map.get("url");
@@ -82,6 +87,7 @@ public class UploadController {
      * @Param: [fileName]
      * @return: java.io.File
      */
+    @ApiOperation(value = "头像上传", notes = "普通的图片上传：200px * 200px")
     @PostMapping("/avatar")
     public Result uploadAvatar(MultipartFile file) throws IOException {
         if (file.isEmpty() || StringUtils.isEmpty(file.getOriginalFilename())) {
@@ -108,7 +114,7 @@ public class UploadController {
      * @Description: 图片压缩并且上传阿里云OSS
      * @Date: 16:17 2018/11/18
      * @Param: [file, width, height]
-     * @return: java.util.Map<String       ,   String>
+     * @return: java.util.Map<String,String>
      */
     public Map<String, String> uploadFile(MultipartFile file, int width, int height) throws IOException {
         // 获取一个空文件

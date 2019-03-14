@@ -20,6 +20,7 @@ public class SpringMvcConfigurer implements WebMvcConfigurer {
     /**
      * @Description: 跨越配置
      */
+    @Override
     public void addCorsMappings(CorsRegistry registry) {
         log.info("跨域已设置");
         registry.addMapping("/**")
