@@ -19,12 +19,12 @@ export function getUserById(params) {
 
 // 新增用户
 export function saveUser(params) {
-  return request({ url: '/user/', method: 'post', data: params })
+  return request({ url: '/user', method: 'post', data: params })
 }
 
 // 修改用户
 export function updateUser(params) {
-  return request({ url: '/user/', method: 'put', data: params })
+  return request({ url: '/user', method: 'put', data: params })
 }
 
 // 删除用户

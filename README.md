@@ -10,7 +10,7 @@
 
 可以去看我写的教程：https://github.com/thousmile/spring-admin-vue
 
-环境需求：jdk 8，redis，mysql
+环境需求：jdk 8，redis，mysql ，阿里云OSS文件存储
 
 ```
 1.导入数据库  baodao.sql
@@ -25,10 +25,21 @@
 
 这是超级管理员拥有的权限
 
+管理员(所有权限)
+	账号：root_admin
+	密码：root_admin
+
 ![这是超级管理员，拥有的权限](./images/root.png)
 
 
 
-这是管理员拥有的权限
+
+
+普通用户(某些权限)
+	账号: user_test
+	密码：user_test
+	
+
+这是普通用户拥有的权限
 
 ![](./images/admin.png)

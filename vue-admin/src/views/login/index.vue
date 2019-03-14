@@ -2,7 +2,7 @@
   <div class="login-container">
     <div v-title>登录</div>
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-      <h3 class="title">vue-admin-template</h3>
+      <h3 class="title">{{ website.title }}</h3>
       <el-form-item prop="username">
         <span class="svg-container">
           <svg-icon icon-class="user" />
@@ -25,19 +25,20 @@
         </span>
       </el-form-item>
       <el-form-item>
-        <el-button :loading="loading" type="primary" style="width:100%;" @click.native.prevent="handleLogin">
-          Sign in
+        <el-button :loading="loading" type="primary" style="width:100%;" @click.native.prevent="handleLogin">          登录
         </el-button>
       </el-form-item>
       <div class="tips">
-        <span style="margin-right:20px;">username: admin</span>
-        <span> password: admin</span>
+        <span style="margin-right:20px;">username:  {{ loginForm.username }}</span><br>
+        <span> password:  {{ loginForm.password }}</span>
       </div>
     </el-form>
   </div>
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Login',
@@ -70,6 +71,11 @@ export default {
       pwdType: 'password',
       redirect: undefined
     }
+  },
+  computed: {
+    ...mapGetters([
+      'website'
+    ])
   },
   watch: {
     $route: {
@@ -159,7 +165,7 @@ $light_gray:#eee;
     margin: 120px auto;
   }
   .tips {
-    font-size: 14px;
+    font-size: 18px;
     color: #fff;
     margin-bottom: 10px;
     span {

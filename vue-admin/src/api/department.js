@@ -24,12 +24,12 @@ export function getDeptById(params) {
 
 // 新增部门
 export function saveDept(params) {
-  return request({ url: '/dept/', method: 'post', data: params })
+  return request({ url: '/dept', method: 'post', data: params })
 }
 
 // 修改部门
 export function updateDept(params) {
-  return request({ url: '/dept/', method: 'put', data: params })
+  return request({ url: '/dept', method: 'put', data: params })
 }
 
 // 删除部门

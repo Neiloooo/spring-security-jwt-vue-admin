@@ -19,12 +19,12 @@ export function getRoleById(params) {
 
 // 新增角色
 export function saveRole(params) {
-  return request({ url: '/role/', method: 'post', data: params })
+  return request({ url: '/role', method: 'post', data: params })
 }
 
 // 修改角色
 export function updateRole(params) {
-  return request({ url: '/role/', method: 'put', data: params })
+  return request({ url: '/role', method: 'put', data: params })
 }
 
 // 删除角色

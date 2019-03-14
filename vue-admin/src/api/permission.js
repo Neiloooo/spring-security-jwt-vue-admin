@@ -24,12 +24,12 @@ export function getPermissionById(params) {
 
 // 新增权限
 export function savePermission(params) {
-  return request({ url: '/permission/', method: 'post', data: params })
+  return request({ url: '/permission', method: 'post', data: params })
 }
 
 // 修改权限
 export function updatePermission(params) {
-  return request({ url: '/permission/', method: 'put', data: params })
+  return request({ url: '/permission', method: 'put', data: params })
 }
 
 // 删除权限
